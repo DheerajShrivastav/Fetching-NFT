@@ -1,7 +1,8 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import { useState } from 'react'
-import { NFTCard } from "./components/nftCard";
+import NFTCard from './components/nftCard';
+
 
 
 const Home = () => {
@@ -13,7 +14,8 @@ const Home = () => {
   const fetchNFTs = async() => {
     let nfts;
     console.log("fetching nfts");
-    const api_key = "Alchemy_NFT_API"
+    const api_key = "zOjYXk2v9dfjSKSv8OJj9qh--mxLSv9O"
+    // const api_key = "Alchemy_NFT_API"
     const baseURL = `https://eth-mainnet.alchemyapi.io/v2/${api_key}/getNFTs/`;
 
   
@@ -39,7 +41,8 @@ const fetchNFTsForCollection = async () => {
     var requestOptions = {
       method: 'GET'
     };
-    const api_key = "Alchemy_NFT_API"
+    // const api_key = "Alchemy_NFT_API"
+    const api_key = "zOjYXk2v9dfjSKSv8OJj9qh--mxLSv9O"
     const baseURL = `https://eth-mainnet.alchemyapi.io/v2/${api_key}/getNFTsForCollection/`;
     const fetchURL = `${baseURL}?contractAddress=${collection}&withMetadata=${"true"}`;
     const nfts = await fetch(fetchURL, requestOptions).then(data => data.json())
